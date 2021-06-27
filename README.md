@@ -6,6 +6,6 @@
 
 - [x] Aula 01
 - [x] Aula 02
-- [ ] Aula 03
-- [ ] Aula 04
+- [x] Aula 03
+- [x] Aula 04
 - [ ] Aula 05
