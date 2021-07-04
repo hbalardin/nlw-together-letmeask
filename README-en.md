@@ -5,8 +5,8 @@
 
 <!-- descrição -->
 <h2 align="center">
-  Crie salas de Q&amp;A ao-vivo <br>
-  Tire as dúvidas da sua audiência em tempo-real
+  Create privates Q&amp;A rooms <br>
+  Answer questions from your audience in real time
 </h2>
 
 ---
