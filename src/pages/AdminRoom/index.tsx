@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
 import logoImg from "../../assets/images/logo.svg";
@@ -10,7 +9,7 @@ import { Button } from "../../components/Button";
 import { Question } from "../../components/Question";
 import { RoomCode } from "../../components/RoomCode";
 
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 import { useRoom } from "../../hooks/useRoom";
 import { database } from "../../services/firebase";
 
@@ -21,23 +20,12 @@ type RoomParams = {
 };
 
 export const AdminRoom = () => {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
 
   const { title, questions } = useRoom(roomId);
-
-  useEffect(() => {
-    try {
-      if (!user) {
-        history.push("/");
-        throw new Error("You must be logged in");
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  }, [user, history]);
 
   const handleEndRoom = async () => {
     await database.ref(`rooms/${roomId}`).update({
