@@ -10,12 +10,24 @@ import { database } from "../services/firebase";
 import { useAuth } from "../hooks/useAuth";
 
 import "../styles/auth.scss";
+import { useEffect } from "react";
 
 export const NewRoom = () => {
   const { user } = useAuth();
   const history = useHistory();
 
   const [newRoom, setNewRoom] = useState("");
+
+  useEffect(() => {
+    try {
+      if (!user) {
+        history.push("/");
+        throw new Error("You must be logged in");
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  }, [user, history]);
 
   const handleCreateRoom = async (event: FormEvent) => {
     event.preventDefault();
@@ -31,7 +43,7 @@ export const NewRoom = () => {
       authorId: user?.id,
     });
 
-    history.push(`/rooms/${firebaseRoom.key}`);
+    history.push(`/admin/rooms/${firebaseRoom.key}`);
   };
 
   return (
