@@ -11,7 +11,7 @@
 
 ---
 
-<p align="center">Preview: <a>https://hb-nlw-together-letmeask.web.app/</a></p>
+<p align="center">Preview: <a href="https://hb-nlw-together-letmeask.web.app/">https://hb-nlw-together-letmeask.web.app/</a></p>
 
 ---
 
